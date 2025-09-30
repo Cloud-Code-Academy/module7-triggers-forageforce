@@ -20,11 +20,11 @@ trigger AccountTrigger on Account (Before insert, After insert) {
             }
         }
         if (trigger.isAfter) {
-        Contact rCon = new Contact();
-        rCon.LastName = lastName;
-        rCon.Email = contactEmail;
-        rCon.AccountId = acc.Id;
-        newRelatedContacts.add(rCon);
+            Contact rCon = new Contact();
+            rCon.LastName = lastName;
+            rCon.Email = contactEmail;
+            rCon.AccountId = acc.Id;
+            newRelatedContacts.add(rCon);
         }
     }
     insert newRelatedContacts;
